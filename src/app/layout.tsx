@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from '../components/NavBar';
+import { Vortex } from '../components/ui/vortex';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,8 +29,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NavBar />
-        {children}
+        <Vortex
+          backgroundColor="black"
+          rangeY={800}
+          particleCount={500}
+          baseHue={120}
+          className="min-w-screen h-screen"
+        >
+          <NavBar />
+          {children}
+        </Vortex>
       </body>
     </html>
   );
