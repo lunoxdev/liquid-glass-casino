@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from '../components/NavBar';
+import AudioPlayer from '../components/audio/AudioPlayer';
 import { Vortex } from '../components/ui/vortex';
 
 const geistSans = Geist({
@@ -36,6 +37,7 @@ export default function RootLayout({
           baseHue={120}
           className="min-w-screen h-screen"
         >
+          <AudioPlayer />
           <NavBar />
           {children}
         </Vortex>
