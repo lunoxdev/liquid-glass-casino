@@ -45,7 +45,7 @@ export default function AuthButton() {
             {!session ? (
                 <button
                     onClick={handleLogin}
-                    className="rounded-full border-2 border-gray-600 hover:border-emerald-700 transform hover:scale-110 transition duration-300 ease-in-out cursor-pointer focus:scale-100"
+                    className="rounded-full border-2 border-gray-600 hover:border-cyan-700 transform hover:scale-110 transition duration-300 ease-in-out cursor-pointer focus:scale-100"
                 >
                     <Image src="/google.svg" alt="Google Logo" width={40} height={40} />
                 </button>
@@ -54,7 +54,7 @@ export default function AuthButton() {
                     {avatarUrl && (
                         <button className="relative h-12 w-12 overflow-hidden rounded-full p-0.5 hover:scale-110 hover:brightness-125 transform transition duration-300 ease-in-out cursor-pointer focus:scale-100">
                             <span
-                                className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,rgba(52,211,153,0)_0%,rgba(52,211,153,0.9)_80%,rgba(52,211,153,0)_100%)]"
+                                className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#00b8db00_0%,#00b8db_80%,#00b8db00_100%)]"
                             />
                             <Image
                                 src={displayAvatar}
