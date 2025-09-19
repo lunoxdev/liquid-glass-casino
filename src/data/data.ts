@@ -1,5 +1,4 @@
 import { type Games } from "../types/types";
-import cover1 from "../assets/games/cover-384x505-1.webp";
 import cover2 from "../assets/games/cover-384x505-2.webp";
 import cover3 from "../assets/games/cover-384x505-3.webp";
 import cover4 from "../assets/games/cover-384x505-4.webp";
@@ -17,7 +16,6 @@ import cover15 from "../assets/games/cover-384x505-15.webp";
 import cover16 from "../assets/games/cover-384x505-16.webp";
 import cover17 from "../assets/games/cover-384x505-17.webp";
 import cover18 from "../assets/games/cover-384x505-18.webp";
-import cover19 from "../assets/games/cover-384x505-19.webp";
 import cover20 from "../assets/games/cover-384x505-20.webp";
 import jugglenau from "../assets/games/jugglenau.webp";
 import koiGate from "../assets/games/koi-gate.webp";
@@ -146,15 +144,5 @@ export const gamesData: Games[] = [
     name: "Rise of Ymir",
     url: "https://static-live.hacksawgaming.com/launcher/static-launcher-backend.html?gameid=1616&channel=mobile&mode=demo&currency=eur&language=es&lobbyurl=https%3a%2f%2fstake.com&token=StakeDemoToken&partner=stake&rcenable=false&rcelapsed=0&rcinterval=0",
     cover: cover17,
-  },
-  {
-    name: "True Kult",
-    url: "https://babylonstkn.evo-games.com/frontend/evo/r2/#demo=direct&provider=nlc&balance_id=demo-babylonstk000002-cGxheWluZ2d1ZXN0MDUxMw%253D%253D-4e37c0b2-d165-479b-ab31-302d1cdc372b&ua_launch_id=185db6b2bce621c44f007fba&game=truekult&table_id=truekult00000000&app=promotions",
-    cover: cover19,
-  },
-  {
-    name: "Wishbringer",
-    url: "https://static-live.hacksawgaming.com/launcher/static-launcher-backend.html?gameid=1711&channel=mobile&mode=demo&currency=eur&language=es&lobbyurl=https%3a%2f%2fstake.com&token=StakeDemoToken&partner=stake&rcenable=false&rcelapsed=0&rcinterval=0",
-    cover: cover1,
   },
 ];
