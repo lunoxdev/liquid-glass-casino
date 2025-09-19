@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import NavBar from '../components/NavBar';
 import AudioPlayer from '../components/audio/AudioPlayer';
 import { Vortex } from '../components/ui/vortex';
 
@@ -35,10 +34,9 @@ export default function RootLayout({
           rangeY={800}
           particleCount={500}
           baseHue={120}
-          className="min-w-screen h-screen"
+          className="w-screen h-screen overflow-auto"
         >
           <AudioPlayer />
-          <NavBar />
           {children}
         </Vortex>
       </body>
