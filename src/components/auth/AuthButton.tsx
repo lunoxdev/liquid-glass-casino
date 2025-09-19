@@ -32,7 +32,7 @@ export default function AuthButton() {
     if (loading) {
         return (
             <div className='flex items-center gap-4 relative h-14'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 16 16" className='animate-spin'><path fill="#cccccc" d="M8 0A8 8 0 0 0 .002 7.812C.094 4.033 2.968 1 6.5 1C10.09 1 13 4.134 13 8a1.5 1.5 0 0 0 3 0a8 8 0 0 0-8-8m0 16a8 8 0 0 0 7.998-7.812C15.906 11.967 13.032 15 9.5 15C5.91 15 3 11.866 3 8a1.5 1.5 0 0 0-3 0a8 8 0 0 0 8 8" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 16 16" className='animate-spin'><path fill="#cccccc" d="M8 0A8 8 0 0 0 .002 7.812C.094 4.033 2.968 1 6.5 1C10.09 1 13 4.134 13 8a1.5 1.5 0 0 0 3 0a8 8 0 0 0-8-8m0 16a8 8 0 0 0 7.998-7.812C15.906 11.967 13.032 15 9.5 15C5.91 15 3 11.866 3 8a1.5 1.5 0 0 0-3 0a8 8 0 0 0 8 8" /></svg>
             </div>
         )
     }
@@ -45,31 +45,37 @@ export default function AuthButton() {
             {!session ? (
                 <button
                     onClick={handleLogin}
-                    className="rounded-full border-2 border-gray-600 transform hover:scale-110 transition duration-300 ease-in-out cursor-pointer focus:scale-100"
+                    className="rounded-full border-2 border-gray-600 hover:border-emerald-700 transform hover:scale-110 transition duration-300 ease-in-out cursor-pointer focus:scale-100"
                 >
-                    <Image src="/google.svg" alt="Google Logo" width={36} height={36} />
+                    <Image src="/google.svg" alt="Google Logo" width={40} height={40} />
                 </button>
             ) : (
                 <div className="relative">
                     {avatarUrl && (
-                        <Image
-                            src={displayAvatar}
-                            alt="Avatar"
-                            width={40}
-                            height={40}
-                            className="rounded-full border-2 border-gray-600 shadow-md transform hover:scale-110 transition duration-300 ease-in-out cursor-pointer"
-                            onClick={() => setShowLogout(!showLogout)}
-                        />
+                        <button className="relative h-12 w-12 overflow-hidden rounded-full p-0.5 hover:scale-110 hover:brightness-125 transform transition duration-300 ease-in-out cursor-pointer focus:scale-100">
+                            <span
+                                className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,rgba(52,211,153,0)_0%,rgba(52,211,153,0.9)_60%,rgba(52,211,153,0)_60%)]"
+                            />
+                            <Image
+                                src={displayAvatar}
+                                alt="Avatar"
+                                width={40}
+                                height={40}
+                                className="relative w-full h-full rounded-full object-cover transform transition duration-300 ease-in-out cursor-pointer"
+                                onClick={() => setShowLogout(!showLogout)}
+                            />
+                        </button>
                     )}
                     {showLogout && (
-                        <div className="absolute top-1/2 -translate-y-1/2 right-[calc(100%+theme('spacing.2'))] w-32 py-1 z-10">
-                            <button
-                                onClick={handleLogout}
-                                className="block w-full font-bold text-center px-4 py-2 text-sm rounded-full transition duration-300 bg-gradient-to-l from-red-800 via-red-700 to-red-800 cursor-pointer hover:brightness-125"
-                            >
+                        <button
+                            onClick={handleLogout}
+                            className="absolute top-1/2 -translate-y-1/2 right-[calc(100%+theme('spacing.2'))] w-32 py-1 z-10 bg-red-950 no-underline group cursor-pointer shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white hover:scale-105 hover:brightness-125 focus:scale-100 transform transition duration-300 ease-in-out">
+                            <span className="absolute -top-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-red-400/5 via-red-400/90 to-red-400/0 transition-opacity duration-500" />
+                            <div className="relative flex items-center z-10 rounded-full bg-zinc-950 py-0.5 px-6 ring-1 ring-white/10">
                                 Cerrar sesión
-                            </button>
-                        </div>
+                            </div>
+                            <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-red-400/0 via-red-400/90 to-red-400/0 transition-opacity duration-500" />
+                        </button>
                     )}
                 </div>
             )}
