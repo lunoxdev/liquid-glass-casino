@@ -1,12 +1,22 @@
+"use client"
+
 import Image from "next/image"
 import diamond from "../assets/rewards/diamond.png"
+import { useState } from 'react';
 
 const RewardSystem = () => {
     // Mock data
     const credits = 1250;
-    const exp = 75; // out of 100 for current level
     const level = 5;
-    const dailyClaimAvailable = true;
+    const [exp, setExp] = useState(75);
+    const [dailyClaimAvailable, setDailyClaimAvailable] = useState(true);
+
+    const handleClaimDaily = () => {
+        if (dailyClaimAvailable) {
+            setExp(prevExp => Math.min(100, prevExp + 10));
+            setDailyClaimAvailable(false);
+        }
+    };
 
     return (
         <section className="w-full h-60  rounded-lg shadow-2xl flex flex-col overflow-hidden">
@@ -18,7 +28,10 @@ const RewardSystem = () => {
                     <span className="text-amber-300 text-2xl font-bold">{credits}</span>
                 </div>
                 {dailyClaimAvailable ? (
-                    <button className="w-full sm:w-auto bg-green-500/30 hover:bg-green-500/40 border border-green-500/70 hover:brightness-150 font-bold py-2 px-5 rounded-lg shadow-md duration-200 transform hover:scale-105 cursor-pointer">
+                    <button
+                        onClick={handleClaimDaily}
+                        className="w-full sm:w-auto bg-green-500/30 hover:bg-green-500/40 border border-green-500/70 hover:brightness-150 font-bold py-2 px-5 rounded-lg shadow-md duration-200 transform hover:scale-105 cursor-pointer"
+                    >
                         Claim Daily
                     </button>
                 ) : (
