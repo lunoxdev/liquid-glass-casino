@@ -31,10 +31,6 @@ const GamesGrid = () => {
                         <Image
                             src={game.cover}
                             alt={game.name}
-                            width={384}
-                            height={505}
-                            layout="responsive"
-                            objectFit="cover"
                             className="rounded-t-lg"
                         />
                     </Link>
