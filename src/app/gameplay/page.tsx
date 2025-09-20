@@ -1,7 +1,8 @@
 "use client";
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
-const GamePlayPage = () => {
+const GamePlayPageContent = () => {
     const searchParams = useSearchParams();
     const gameUrl = searchParams.get("url");
 
@@ -22,6 +23,14 @@ const GamePlayPage = () => {
                 allowFullScreen
             />
         </div>
+    );
+};
+
+const GamePlayPage = () => {
+    return (
+        <Suspense fallback={<div>Loading game...</div>}>
+            <GamePlayPageContent />
+        </Suspense>
     );
 };
 
