@@ -1,6 +1,6 @@
 'use client';
 
-import { supabase, useUserSession } from '../../lib/supabaseClient';
+import { supabase, useUserSession } from '../../lib/supabase/client';
 import Image from 'next/image';
 import { useCallback, useState } from 'react';
 
